@@ -10,6 +10,11 @@ def AfficherImg(img):
  plt.axis("off")
  plt.imshow(img, interpolation="nearest")
  plt.show()
+def printchoix():
+ print(Fore.RED + '1)Print source code')
+ print(Fore.RED + '2)Execute')
+ print(Fore.RED + '3)Menu')
+ print(Fore.GREEN + 'chosse correcte value:')
 
 print(text2art("|TP Python|"))
 def menu():
@@ -32,10 +37,7 @@ def menu():
      k_=int(input())
      if k_==1 :
       while(k__!=1 and k__!=2 and k__!=3):
-        print(Fore.RED + '1)Print source code')
-        print(Fore.RED + '2)Execute')
-        print(Fore.RED + '3)Menu')
-        print(Fore.GREEN + 'chosse correcte value:')
+        printchoix()
         k__=int(input())
         if k__==1:
           print(Fore.YELLOW +"import numpy as np\ndef image_noire(h,l):\n return  np.zeros((h,l))")
@@ -48,10 +50,7 @@ def menu():
           menu()
      elif k_==2:
        while(k__!=1 and k__!=2 and k__!=3):
-        print(Fore.RED + '1)Print source code')
-        print(Fore.RED + '2)Execute')
-        print(Fore.RED + '3)Menu')
-        print(Fore.GREEN + 'chosse correcte value:')
+        printchoix()
         k__=int(input())
         if k__==1:
           print(Fore.YELLOW +"import numpy as np\ndef image_blanch(h,l):\n return  np.ones((h,l))")
