@@ -1,21 +1,12 @@
-import matplotlib.pyplot as plt
+from fonction import *
 from art import text2art, tprint, art 
 from colorama import Fore
-import numpy as np
-def image_noire(h,l):                                                                
- return  np.zeros((h,l))
-def image_blanch(h,l):
-  return  np.ones((h,l))
-def AfficherImg(img):
- plt.axis("off")
- plt.imshow(img, interpolation="nearest")
- plt.show()
+import os
 def printchoix():
  print(Fore.RED + '1)Print source code')
  print(Fore.RED + '2)Execute')
  print(Fore.RED + '3)Menu')
  print(Fore.GREEN + 'chosse correcte value:')
-
 print(text2art("|TP Python|"))
 def menu():
  x_=y_=k=k_=k__=0
@@ -45,7 +36,10 @@ def menu():
           x_=int(input("rentrer hauteur de photo"))
           y_=int(input("rentrer largeur de photo"))
           immg=image_noire(x_,y_)
-          AfficherImg(immg)
+          os.remove("image_.png")
+          image = Image.new('RGB', (x_,y_))
+          image.save("image_.png", "PNG")
+          array_img(immg)
         elif k__==3:
           menu()
      elif k_==2:
@@ -58,6 +52,10 @@ def menu():
           x_=int(input("rentrer hauteur de photo"))
           y_=int(input("rentrer largeur de photo"))
           immg=image_blanch(x_,y_)
-          AfficherImg(immg)
+          os.remove("image_.png")
+          image = Image.new('RGB', (x_,y_))
+          image.save("image_.png", "PNG")
+          array_img(immg)
         elif k__==3:
           menu()
+menu()
