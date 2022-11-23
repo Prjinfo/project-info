@@ -85,11 +85,12 @@ def menu():
      elif k_==5:
       menu() 
   if k==3:
-   while(k_!=1 and k_!=2 and k_!=3 and k_!=4): 
+   while(k_!=1 and k_!=2 and k_!=3 and k_!=4 and k_!=5 ): 
      print(Fore.RED + '1)Question 13. Écrire une fonction inverser')
      print(Fore.RED + '2)Question 14. Écrire une fonction flipH')
-     print(Fore.RED + '3)Question 15. Écrire une fonction poserH')
-     print(Fore.RED + '4)Menu')
+     print(Fore.RED + '3)Question 15. Écrire une fonction poserV')
+     print(Fore.RED + '4)Question 16. Écrire une fonction poserH')
+     print(Fore.RED + '5)Menu')
      print(Fore.GREEN + 'chosse correcte value:')
      k_=int(input())
      if k_==1 :
@@ -100,8 +101,38 @@ def menu():
          print(Fore.YELLOW +"def inverser(img):\n   hoteur = img.shape[0]\n   largeur = img.shape[1]\n   channels = img.shape[2]\n   size = (hoteur,largeur,channels)\n   newimg = np.zeros(size,np.uint8)\n   for x in range(0,hoteur):\n       for y in range(0,largeur):\n           for c in range(0,channels):\n              newimg[x,y,c] = 255 - img[x,y,c]\n   return newimg ")
         elif k__==2:
          main()
-        elif k__=3
+        elif k__==3:
          menu()
-
+     if k_==2 :
+      while(k__!=1 and k__!=2 and k__!=3): 
+       printchoix()
+       k__=int(input())
+       if k__==1:
+        print(Fore.YELLOW +"def flipH(img):\n   Inputimg = cv.imread(img)\n   flipvertical = cv.flip(Inputimg,0)\n   cv.imwrite('flipverticale.jpg',flipvertical)")
+       elif k__==2:
+         flipH()
+       elif k__==3:
+         menu()
+     if k_==3 :
+      while(k__!=1 and k__!=2 and k__!=3): 
+       printchoix()
+       k__=int(input())
+       if k__==1:
+        print(Fore.YELLOW +" def poserv(img1, img2):\n    hoteur1 = img1.shape[0]\n    largeur1 = img1.shape[1]\n    channels1= img1.shape[2]\n    hoteur2 = img2.shape[0]\n    largeur2 = img2.shape[1]\n    channels2 = img2.shape[2]\n     N = 10 \n    Nhoteur = hoteur1 + hoteur1 + N\n    if(largeur1 > largeur2):\n        Nlargeur = largeur1\n    else:\n        Nlargeur = largeur2\n    Nimage = np.zeros((Nhoteur,Nlargeur,channels1),np.uint8)\n    for x in( 0,hoteur1):\n        for y in (0,largeur1):\n            for c in (0,channels1):\n                Nimage[x,y,c]= img1[x,y,c]\n    for x in (0,hoteur2):\n        for y in (0,largeur2):\n            for c in (0,channels2):\n                Nimage[x,(hoteur1+N),c] = img2[x,y,c]\n    return Nimage")
+       elif k__==2:
+         main2()
+       elif k__==3:
+         menu()
+     if k_==4:
+      while(k__!=1 and k__!=2 and k__!=3): 
+       printchoix()
+       k__=int(input())
+       if k__==1:
+        print(Fore.YELLOW +"def poserv(img1, img2):\n    hoteur1 = img1.shape[0]\n    largeur1 = img1.shape[1]\n    channels1= img1.shape[2]\n    hoteur2 = img2.shape[0]\n    largeur2 = img2.shape[1]\n    channels2 = img2.shape[2]\n     N = 10 \n    Nhoteur = hoteur1 + hoteur1 + N\n    if(largeur1 > largeur2):\n        Nlargeur = largeur1\n    else:\n        Nlargeur = largeur2\n    Nimage = np.zeros((Nhoteur,Nlargeur,channels1),np.uint8)\n    for x in( 0,hoteur1):\n        for y in (0,largeur1):\n            for c in (0,channels1):\n                Nimage[x,y,c]= img1[x,y,c]\n    for x in (0,hoteur2):\n        for y in (0,largeur2):\n            for c in (0,channels2):\n                Nimage[x,(hoteur1+N),c] = img2[x,y,c]\n    return Nimage")
+       elif k__==2:
+         main2()   
+       elif k__==3:
+         menu()
+     elif k_==5:
+      menu() 
 menu()
-      
