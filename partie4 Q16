@@ -1,0 +1,33 @@
+import numpy as np
+import cv2 as cv
+def poserH(img1, img2):
+    hoteur1 = img1.shape[0]
+    largeur1 = img1.shape[1]
+    channels1= img1.shape[2]
+    hoteur2 = img2.shape[0]
+    largeur2 = img2.shape[1]
+    channels2 = img2.shape[2]
+    N = 10 ##espace entre deux combinaison image
+    Nlargeur = largeur2 + largeur1 + N
+    if(hoteur1>hoteur2):
+        Nhoteur = hoteur1
+    else:
+        Nhoteur = hoteur2
+    Nimage = np.zeros((Nhoteur,Nlargeur,channels1),np.uint8)
+    for x in( 0,hoteur1):
+        for y in (0,largeur1):
+            for c in (0,channels1):
+                Nimage[x,y,c]= img1[x,y,c]
+    for x in (0,hoteur2):
+        for y in (0,largeur2):
+            for c in (0,channels2):
+                Nimage[x,(y+hoteur1+N),c] = img2[x,y,c]
+    return Nimage
+
+def main1():
+    img1 = cv.imread("#entrer une imege1#")
+    img2 = cv.imread("#entrer une image2#")
+    Nimage  = poserH(img1,img2)
+    cv.imwrite = ("hocombinaisonimage.jpg",Nimage)
+if __name__ == '__main__' :
+    main1()
