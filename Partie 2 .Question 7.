@@ -1,0 +1,10 @@
+def negatif(nom_de_image,h,l):
+ base=np.zeros((h,l)) #creer un matrice initialiser par 0 de taille (h,l)
+ img=Image.open(nom_de_image) 
+ for i in range(h):
+    for j in range(l):
+     if img.getpixel((i,j))==0: 
+      base[i,j]=1
+     else:   
+      base[i,j]=0
+ return base
