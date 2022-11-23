@@ -1,19 +1,19 @@
 import numpy as np
 import cv2 as cv
 def inverser(img):
-   \n hoteur = img.shape[0] ###image vide
-   \n largeur = img.shape[1]###image vide
-   \n channels = img.shape[2]###image vide
-   \n size = (hoteur,largeur,channels)
-   \n newimg = np.zeros(size,np.uint8)
-   \n for x in range(0,hoteur):
-       \n for y in range(0,largeur):
-           \n for c in range(0,channels):
-              \n newimg[x,y,c] = 255 - img[x,y,c]
-   \n return newimg
+   hoteur = img.shape[0] ###image vide
+   largeur = img.shape[1]###image vide
+   channels = img.shape[2]###image vide
+   size = (hoteur,largeur,channels)
+   newimg = np.zeros(size,np.uint8)
+   for x in range(0,hoteur):
+       for y in range(0,largeur):
+           for c in range(0,channels):
+              newimg[x,y,c] = 255 - img[x,y,c]
+   return newimg
 def main():
-   \n Inputimg = cv.imread("e01185d40d204505d1073245f1d26f86.jpg")
-   \n inverseimg = inverser(Inputimg)
-   \n input(" entrer pour continue ...")
+   Inputimg = cv.imread("e01185d40d204505d1073245f1d26f86.jpg")
+   inverseimg = inverser(Inputimg)
+   input(" entrer pour continue ...")
 if __name__ == '__main__' :
     main()
