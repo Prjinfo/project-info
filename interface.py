@@ -36,10 +36,8 @@ def menu():
           x_=int(input("rentrer hauteur de photo"))
           y_=int(input("rentrer largeur de photo"))
           immg=image_noire(x_,y_)
-          os.remove("image_.png")
-          image = Image.new('RGB', (x_,y_))
-          image.save("image_.png", "PNG")
-          array_img(immg)
+          image = Image.fromarray(immg)
+          image.show()
         elif k__==3:
           menu()
      elif k_==2:
@@ -52,10 +50,8 @@ def menu():
           x_=int(input("rentrer hauteur de photo"))
           y_=int(input("rentrer largeur de photo"))
           immg=image_blanch(x_,y_)
-          os.remove("image_.png")
-          image = Image.new('RGB', (x_,y_))
-          image.save("image_.png", "PNG")
-          array_img(immg)
+          image = Image.fromarray(immg)
+          image.show()
         elif k__==3:
           menu()
      elif k_==3:
@@ -68,10 +64,8 @@ def menu():
           x_=int(input("rentrer hauteur de photo"))
           y_=int(input("rentrer largeur de photo"))
           immg=creerImgBlancNoir(x_,y_)
-          os.remove("image_.png")
-          image = Image.new('RGB', (x_,y_))
-          image.save("image_.png", "PNG")
-          array_img(immg)
+          image = Image.fromarray(immg)
+          image.show()
         elif k__==3:
          menu()
      elif k_==4:
@@ -84,12 +78,30 @@ def menu():
           x_=int(input("rentrer hauteur de photo"))
           y_=int(input("rentrer largeur de photo"))
           immg=negatif("image_.png",x_,y_)
-          os.remove("image_.png")
-          image = Image.new('RGB', (x_,y_))
-          image.save("image_.png", "PNG")
-          array_img(immg)
+          image = Image.fromarray(immg)
+          image.show()
         elif k__==3:
          menu()
      elif k_==5:
       menu() 
+  if k==3:
+   while(k_!=1 and k_!=2 and k_!=3 and k_!=4): 
+     print(Fore.RED + '1)Question 13. Écrire une fonction inverser')
+     print(Fore.RED + '2)Question 14. Écrire une fonction flipH')
+     print(Fore.RED + '3)Question 15. Écrire une fonction poserH')
+     print(Fore.RED + '4)Menu')
+     print(Fore.GREEN + 'chosse correcte value:')
+     k_=int(input())
+     if k_==1 :
+      while(k__!=1 and k__!=2 and k__!=3):
+        printchoix()
+        k__=int(input())
+        if k__==1:
+         print(Fore.YELLOW +"def inverser(img):\n   hoteur = img.shape[0]\n   largeur = img.shape[1]\n   channels = img.shape[2]\n   size = (hoteur,largeur,channels)\n   newimg = np.zeros(size,np.uint8)\n   for x in range(0,hoteur):\n       for y in range(0,largeur):\n           for c in range(0,channels):\n              newimg[x,y,c] = 255 - img[x,y,c]\n   return newimg ")
+        elif k__==2:
+         main()
+        elif k__=3
+         menu()
+
 menu()
+      
