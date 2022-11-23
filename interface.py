@@ -58,4 +58,38 @@ def menu():
           array_img(immg)
         elif k__==3:
           menu()
+     elif k_==3:
+       while(k__!=1 and k__!=2 and k__!=3):
+        printchoix()
+        k__=int(input())
+        if k__==1:
+         print(Fore.YELLOW +"def creerImgBlancNoir(h,l):\n base=np.zeros((h,l))\n for i in range(h):\n  for j in range(l):\n   base[i, j]=(i+j)%2\n return base")
+        elif k__==2:
+          x_=int(input("rentrer hauteur de photo"))
+          y_=int(input("rentrer largeur de photo"))
+          immg=creerImgBlancNoir(x_,y_)
+          os.remove("image_.png")
+          image = Image.new('RGB', (x_,y_))
+          image.save("image_.png", "PNG")
+          array_img(immg)
+        elif k__==3:
+         menu()
+     elif k_==4:
+      while(k__!=1 and k__!=2 and k__!=3):
+        printchoix()
+        k__=int(input())
+        if k__==1:
+         print(Fore.YELLOW +"def negatif(nom_de_image,h,l):\n base=np.zeros((h,l))\n img=Image.open(nom_de_image)\n for i in range(h):\n    for j in range(l):\n     if img.getpixel((i,j))==0:\n      base[i,j]=1\n     else:   \n      base[i,j]=0\n return base")
+        elif k__==2:
+          x_=int(input("rentrer hauteur de photo"))
+          y_=int(input("rentrer largeur de photo"))
+          immg=negatif("image_.png",x_,y_)
+          os.remove("image_.png")
+          image = Image.new('RGB', (x_,y_))
+          image.save("image_.png", "PNG")
+          array_img(immg)
+        elif k__==3:
+         menu()
+     elif k_==5:
+      menu() 
 menu()
