@@ -1,4 +1,4 @@
 def flipH(img):
-   \n Inputimg = cv.imread("##adresse image ## .jpg")
-   \n flipvertical = cv.flip(Inputimg,0) ## 0 est verticale flip
-   \n cv.imwrite('flipverticale.jpg',flipvertical)
+   Inputimg = cv.imread("##adresse image ## .jpg")
+   flipvertical = cv.flip(Inputimg,0) ## 0 est verticale flip
+   cv.imwrite('flipverticale.jpg',flipvertical)
