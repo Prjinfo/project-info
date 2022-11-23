@@ -8,6 +8,25 @@ def image_noire(h,l):
 #Q5
 def image_blanch(h,l):                                                                
  return  np.ones((h,l))
+#Q6
+def creerImgBlancNoir(h,l):
+   base=np.zeros((h,l))
+   for i in range(h):
+    for j in range(l):
+     base[i, j]=(i+j)%2
+   return base
+#Q7
+def negatif(nom_de_image,h,l):
+ base=np.zeros((h,l))
+ img=Image.open(nom_de_image)
+ for i in range(h):
+    for j in range(l):
+     if img.getpixel((i,j))==0:
+      base[i,j]=1
+     else:   
+      base[i,j]=0
+ return base
+
 #print image fonction
 def AfficherImg(img):
  plt.axis("off")
@@ -22,3 +41,7 @@ def array_img(np_array):
   np_array = np.array(image)
   pil_image=Image.fromarray(np_array)
   pil_image.show()
+################# Ouvrir une image jpg ou bmp on retourne une matrice
+def ouvrirImage(nom_de_image):
+ img=plt.imread(nom_de_image)
+ return img
