@@ -1,7 +1,6 @@
 from numpy import *
 import matplotlib.pyplot as plt
 from math import *
-
 def luminance(img):
     t = array(ouvrirImage(img), dtype=int) #ouvrirImage(img), retourne la matrice d'une image.
     s = 0
@@ -12,4 +11,3 @@ def luminance(img):
     n=len(t[i,j])*len(t[i]) #il s'agit d'une matrice carree,donc le nombre d'elemnt de la matrice est le nombre d'element de la sous liste multiplie par le nombre de liste.
     m=s/n #moyenne pour une matrice normale
     return m
-   
