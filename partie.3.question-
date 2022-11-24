@@ -1,0 +1,9 @@
+def profondeur(img):
+    t2=array(ouvrirImage(img),dtype=int)
+    max=t2[0,0,0]
+    for i in range(len(t2)):
+        for j in range(len(t2[i])):
+            for z in range(len(t2[i,j])):
+                if t2[i,j,z]>max:
+                    max=t2[i,j,z]
+    return max
