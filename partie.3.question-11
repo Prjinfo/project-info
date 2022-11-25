@@ -1,7 +1,6 @@
 from PIL import Image
 from numpy import *
 import matplotlib.pyplot as plt
-from math import *
 def profondeur(img):
     t2=array(ouvrirImage(img),dtype=int)
     max=t2[0,0,0]
