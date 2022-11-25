@@ -1,7 +1,5 @@
 from numpy import *
 import matplotlib.pyplot as plt
-from math import *
-
 def ouvrirImage(nom_de_image):
     img=plt.imread(nom_de_image) 
     return img #retourne la matrice d'une image
