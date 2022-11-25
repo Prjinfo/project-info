@@ -1,3 +1,7 @@
+from PIL import Image
+from numpy import *
+import matplotlib.pyplot as plt
+from math import *
 def profondeur(img):
     t2=array(ouvrirImage(img),dtype=int)
     max=t2[0,0,0]
@@ -7,3 +11,6 @@ def profondeur(img):
                 if t2[i,j,z]>max:
                     max=t2[i,j,z]
     return max
+
+#--------------Pour l'interface:------------------
+print("from PIL import Image\nfrom numpy import *\ndef profondeur(img):\n    t2=array(ouvrirImage(img),dtype=int)\n    max=t2[0,0,0]\n    for i in range(len(t2)):\n        for j in range(len(t2[i])):\n            for z in range(len(t2[i,j])):\n                if t2[i,j,z]>max:\n                    max=t2[i,j,z]\n    return max")
