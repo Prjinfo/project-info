@@ -1,0 +1,15 @@
+from PIL import Image
+from numpy import *
+def constract(img):
+    t1 = array(ouvrirImage(img), dtype=int)
+    s1 = 0
+    m=luminance(img)
+    for i in range(len(t1)-1):
+        for j in range(len(t1[i])-1):
+            for z in range(len(t1[i, j])-1):
+                s1 = s1 + t1[i, j,z]**2 - 2*m*t1[i,j,z] + m**2
+    n = len(t1[i, j]) * len(t1[i]) #il s'agit d'une matrice carree,donc le nombre d'elemnt de la matrice est le nombre d'element de la sous liste multiplie par le nombre de liste
+    res = s1 / n
+    return res
+#---------------Pour l'interface:------------------
+print("from numpy import *\ndef constract(img):\n    t1 = array(ouvrirImage(img), dtype=int)\n    s1 = 0\n    m=luminance(img)\n    for i in range(len(t1)-1):\n        for j in range(len(t1[i])-1):\n            for z in range(len(t1[i, j])-1):\n                s1 = s1 + t1[i, j,z]**2 - 2*m*t1[i,j,z] + m**2\n    n = len(t1[i, j]) * len(t1[i]) #il s'agit d'une matrice carree,donc le nombre d'elemnt de la matrice est le nombre d'element de la sous liste multiplie par le nombre de liste\n    res = s1 / n\n    return res")
