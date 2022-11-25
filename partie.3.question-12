@@ -5,3 +5,8 @@ from math import *
 def ouvrirImage(nom_de_image):
     img=plt.imread(nom_de_image) 
     return img #retourne la matrice d'une image
+
+
+
+#---------------Pour l'interface:----------------------
+print("from PIL import Image\nfrom numpy import *\nimport matplotlib.pyplot as plt\nfrom math import *\ndef ouvrirImage(nom_de_image):\n    img=plt.imread(nom_de_image)\n    return img")
