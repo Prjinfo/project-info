@@ -1,3 +1,4 @@
+from array import array
 from PIL import Image
 import matplotlib.pyplot as plt
 import numpy as np
@@ -101,3 +102,40 @@ def ouvrirImage(nom_de_image):
  img=plt.imread(nom_de_image)
  return img
 
+######Q11
+def profondeur(img):
+    t2=ouvrirImage(img)
+    max=t2[0,0,0]
+    for i in range(len(t2)):
+        for j in range(len(t2[i])):
+            for z in range(len(t2[i,j])):
+                if t2[i,j,z]>max:
+                    max=t2[i,j,z]
+    return max
+############Q9:
+def luminance(img):
+    t = ouvrirImage(img) #ouvrirImage(img), retourne la matrice d'une image.
+    s = 0
+    for i in range(len(t)):
+        for j in range(len(t[i])):
+            for z in range(len(t[i,j])):
+                s += t[i, j, z]
+    n=len(t[i,j])*len(t[i]) #il s'agit d'une matrice carree,donc le nombre d'elemnt de la matrice est le nombre d'element de la sous liste multiplie par le nombre de liste.
+    m=s/n #moyenne pour une matrice normale
+    return m
+###########Q10:
+def constract(img):
+    t1 = ouvrirImage(img)
+    s1 = 0
+    m=luminance(img)
+    for i in range(len(t1)-1):
+        for j in range(len(t1[i])-1):
+            for z in range(len(t1[i, j])-1):
+                s1 = s1 + t1[i, j,z]**2 - 2*m*t1[i,j,z] + m**2
+    n = len(t1[i, j]) * len(t1[i]) #il s'agit d'une matrice carree,donc le nombre d'elemnt de la matrice est le nombre d'element de la sous liste multiplie par le nombre de liste
+    res = s1 / n
+    return res
+########Q12
+def ouvrirImage(nom_de_image):
+    img=plt.imread(nom_de_image) 
+    return img #retourne la matrice d'une image
