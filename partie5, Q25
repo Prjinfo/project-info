@@ -35,3 +35,6 @@ F=Symetrie2(Img)
 plt.figure()
 plt.imshow(F)
 plt.show()
+
+#### l'interface######
+print("#Q1: SYMETRIE VERTICALE/n import matplotlib.pyplot as plt /nimport imageio.v2 as imageio #conversion d'une image à une liste /nImg = imageio.imread("cttm1.jpg").tolist() /nplt.figure() /nplt.imshow(Img) /nplt.show() #affichage de l'image originale /ndef Symetrie(Img): #*Renvoie une image symétrique de Img par un axe vertical /n n=len(Img) # nombre de lignes dans Ing /np = len(Img[0]) # nombre de colonnes dans Ing /nZ =[[0 for j in range(p)] for i in range(n)] # Z la matrice nulle /nfor i in range(n): for j in range(p): /nZ[i][j]=Img[i][p-1-j] /nreturn Z k=Symetrie(Img) /nplt.figure() /nplt.imshow(k) /nplt.show() #affichafe d'une image symétrique par rapport à l'axe verticale /n#Q2: SYMETRIE HORIZONTALE /ndef Symetrie2(Img): #*Renvoie une image symétrique de Img par un axe horizontale /n n=len(Img) # nombre de lignes dans Ing /np = len(Img[0]) # nombre de colonnes dans Ing /nZ =[[0 for j in range(p)] for i in range(n)] # Z la matrice nulle /nfor i in range(n): /nfor j in range(p): /nZ[i][j]=Img[n-1-i][j] /nreturn Z /nImg = imageio.imread("pic.jpg").tolist() /nF=Symetrie2(Img) /nplt.figure() /nplt.imshow(F) /nplt.show()
