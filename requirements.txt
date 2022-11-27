@@ -1,0 +1,6 @@
+colorama
+os
+Pillow
+matplotlib
+numpy
+array
