@@ -1,3 +1,4 @@
+from random import randrange
 from array import array
 from PIL import Image
 import matplotlib.pyplot as plt
@@ -139,3 +140,15 @@ def constract(img):
 def ouvrirImage(nom_de_image):
     img=plt.imread(nom_de_image) 
     return img #retourne la matrice d'une image
+
+#####Q24:
+def  initImageRGB(imageRGB):
+      imageRGB = []
+      for x in range(0,3):
+             imageRGB.append([])
+             for y in range(0,6):
+                   imageRGB[x].append([])
+                   for z in range(0,3):
+                         i=randrange(0,255)
+                         imageRGB[x][y].append(i)
+      return imageRGB
