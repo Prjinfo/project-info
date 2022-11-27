@@ -135,4 +135,54 @@ def menu():
          menu()
      elif k_==5:
       menu() 
+  elif k==2:
+   while(k_!=1 and k_!=2 and k_!=3 and k_!=4 and k_!=5): 
+    print(Fore.RED + '1)Question 9. La luminance')
+    print(Fore.RED + '2)Question 10.La contraste')
+    print(Fore.RED + '3)Question 11.La profendeur')
+    print(Fore.RED + '4)Question 12.La Matrice dune image')
+    print(Fore.RED + '5)Menu')
+    print(Fore.GREEN + 'chosse correcte value:')
+    k_=int(input())
+    if k_==3 :
+     while(k__!=1 and k__!=2 and k__!=3):
+      printchoix()
+      k__=int(input())
+      if k__==1:
+       print(Fore.YELLOW +"def profondeur(img):\n    t2=array(ouvrirImage(img),dtype=int)\n    max=t2[0,0,0]\n    for i in range(len(t2)):\n        for j in range(len(t2[i])):\n            for z in range(len(t2[i,j])):\n                if t2[i,j,z]>max:\n                    max=t2[i,j,z]\n    return max")
+      elif k__==2:
+       print(profondeur("test.jpg"))
+      elif k__==3:
+         menu()
+    elif k_==1 : 
+     while(k__!=1 and k__!=2 and k__!=3):
+      printchoix()
+      k__=int(input())
+      if k__==1:
+       print(Fore.YELLOW +"def luminance(img):\n    t = array(ouvrirImage(img), dtype=int)\n    s = 0\n    for i in range(len(t)):\n        for j in range(len(t[i])):\n            for z in range(len(t[i,j])):\n                s += t[i, j, z]\n    n=len(t[i,j])*len(t[i])\n    m=s/n\n    return m") 
+      elif k__==2:
+       print(luminance("test.jpg"))
+      elif k__==3:
+         menu()
+    elif k_==2 : 
+     while(k__!=1 and k__!=2 and k__!=3):
+      printchoix()    
+      k__=int(input())
+      if k__==1:
+       print(Fore.YELLOW +"def constract(img):\n    t1 = array(ouvrirImage(img), dtype=int)\n    s1 = 0\n    m=luminance(img)\n    for i in range(len(t1)-1):\n        for j in range(len(t1[i])-1):\n            for z in range(len(t1[i, j])-1):\n                s1 = s1 + t1[i, j,z]**2 - 2*m*t1[i,j,z] + m**2\n    n = len(t1[i, j]) * len(t1[i])\n    res = s1 / n\n    return res")
+      elif k__==2:
+       print(constract("test.jpg"))
+      elif k__==3:
+         menu()
+    elif k_==4 : 
+     while(k__!=1 and k__!=2 and k__!=3):
+      printchoix()    
+      k__=int(input())
+      if k__==1:
+       print(Fore.YELLOW +"def ouvrirImage(nom_de_image):\n    img=plt.imread(nom_de_image)\n    return img")
+      elif k__==2:
+       print(ouvrirImage("test.jpg"))
+      elif k__==3:
+         menu()
+
 menu()
