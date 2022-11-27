@@ -184,5 +184,40 @@ def menu():
        print(ouvrirImage("test.jpg"))
       elif k__==3:
          menu()
+  elif k==4:
+   while(k_!=1 and k_!=2 and k_!=3 and k_!=4 and k_!=5): 
+    print(Fore.RED + '1)Question 22')
+    print(Fore.RED + '2)Question 23')
+    print(Fore.RED + '3)Question 24.Ecrire une fonction initImageRGB')
+    print(Fore.RED + '4)Question 25 Ecrire une fonction symetrie')
+    print(Fore.RED + '5)Menu')
+    print(Fore.GREEN + 'chosse correcte value:')
+    k_=int(input())
+    if k_==1 : 
+     while(k__!=1 and k__!=2 and k__!=3):
+      printchoix()
+      k__=int(input())    
+      if k__==1 or k__==2 :
+       print(Fore.YELLOW +"M[0][1][1]=50\n M[1][0][1]=255\n M[2][1][0]=25")
+      elif k__==3:
+       menu()
+    elif k_==2 :   
+     while(k__!=1 and k__!=2 and k__!=3):
+      printchoix()    
+      k__=int(input())
+      if k__==1 or k__==2 :
+       print(Fore.YELLOW +"on sait que chaque pixel est représenté par 3 octets donc lea quantité de mémoire nécéssaire pour stocker cette image est:\n n*p*3 = 3*6*3 = 54o = 432 bits")
+      elif k__==3:
+       menu()
+    elif k_==3 :   
+     while(k__!=1 and k__!=2 and k__!=3):
+      printchoix()    
+      k__=int(input())
+      if k__==1  :
+       print(Fore.YELLOW + "def initImageRGB(imageRGB):\n imageRGB = []\n for x in range(0, 3):\n imageRGB.append([])\n for y in range(0,6):\n  imageRGB[x].append([]) \n  for z in range(0,3):\n   i=randrange(0,255)\n   imageRGB[x][y].append(i)\n return imageRGB")
+      elif k__==2:
+       print(initImageRGB("test.jpg"))
+      elif k__==3:
+       menu()
 
 menu()
