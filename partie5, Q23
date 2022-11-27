@@ -1,0 +1,4 @@
+"""on sait que chaque pixel est représenté par 3 octets
+donc lea quantité de mémoire nécéssaire pour stocker cette image est:
+ n*p*3 = 3*6*3 = 54o = 432 bits"""
+ 
