@@ -1,0 +1,37 @@
+#Q1: SYMETRIE VERTICALE
+import matplotlib.pyplot as plt
+import imageio.v2 as imageio #conversion d'une image à une liste
+Img = imageio.imread("cttm1.jpg").tolist()
+plt.figure()
+plt.imshow(Img)
+plt.show()
+#affichage de l'image originale
+def Symetrie(Img):
+#*Renvoie une image symétrique de Img par un axe vertical
+     n=len(Img)  # nombre de lignes dans Ing
+     p = len(Img[0])  # nombre de colonnes dans Ing
+     Z =[[0 for j in range(p)] for i in range(n)]  # Z la matrice nulle
+     for i in range(n):
+            for j in range(p):
+                  Z[i][j]=Img[i][p-1-j]
+     return Z
+k=Symetrie(Img)
+plt.figure()
+plt.imshow(k)
+plt.show() #affichafe d'une image symétrique par rapport à l'axe verticale
+
+#Q2: SYMETRIE HORIZONTALE
+def Symetrie2(Img):
+#*Renvoie une image symétrique de Img par un axe horizontale
+     n=len(Img)  # nombre de lignes dans Ing
+     p = len(Img[0])  # nombre de colonnes dans Ing
+     Z =[[0 for j in range(p)] for i in range(n)]  # Z la matrice nulle
+     for i in range(n):
+            for j in range(p):
+                  Z[i][j]=Img[n-1-i][j]
+     return Z
+Img = imageio.imread("pic.jpg").tolist()
+F=Symetrie2(Img)
+plt.figure()
+plt.imshow(F)
+plt.show()
