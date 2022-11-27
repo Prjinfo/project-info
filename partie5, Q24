@@ -8,3 +8,5 @@ def  initImageRGB(imageRGB):
                          i=randrange(0,255)
                          imageRGB[x][y].append(i)
       return imageRGB
+      ####### pour l'interface######
+      print("def  initImageRGB(imageRGB):/n imageRGB = [] /nfor x in range(0, 3):/nimageRGB.append([]) /nfor y in range(0,6):/nimageRGB[x].append([]) /nfor z in range(0,3):/ni=randrange(0,255)/nimageRGB[x][y].append(i)/nreturn imageRGB
