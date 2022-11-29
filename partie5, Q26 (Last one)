@@ -4,8 +4,7 @@ def grayscale(imageRGB):
         GrayImg=[[0]*len(Img[0]) for i in range(len(Img))]#initialiser la matrice 2D en 0
 for i in range(len(Img)):
     for j in range(len(Img[0])):
-        #print("les valeurs max sont:", (M[i][j][2]+M[i][j][0]+M[i][j][1])//3)
-         GrayImg[i][j]=(Img[i][j][2]+Img[i][j][0]+Img[i][j][1])//3 #implémenter la mztrice avec la moyenne de chaque pixel
+        GrayImg[i][j]=(Img[i][j][2]+Img[i][j][0]+Img[i][j][1])//3 #implémenter la mztrice avec la moyenne de chaque pixel
 print(GrayImg)
 array = array(GrayImg, dtype=uint8)
 new_image = Image.fromarray(array) #convertir la matrice en image
@@ -15,3 +14,4 @@ plt.imshow(new_image, cmap = "gray")
 plt.show()
 
 ########L'INTERFACE########
+print("from PIL import Image /nfrom numpy import* /ndef grayscale(imageRGB): /nGrayImg=[[0]*len(Img[0]) /nfor i in range(len(Img))]#initialiser la matrice 2D en 0 /nfor i in range(len(Img)): /nfor j in range(len(Img[0])):/n GrayImg[i][j]=(Img[i][j][2]+Img[i][j][0]+Img[i][j][1])//3 #implémenter la mztrice avec la moyenne de chaque pixel /nprint(GrayImg) /narray = array(GrayImg, dtype=uint8) /nnew_image = Image.fromarray(array) #convertir la matrice en image /nplt.axis("off") /nplt.imshow(new_image, cmap = "gray") #ouvrir l'image /nplt.show()
