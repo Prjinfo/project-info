@@ -7,7 +7,7 @@ def printchoix():
  print(Fore.RED + '2)Execute')
  print(Fore.RED + '3)Menu')
  print(Fore.GREEN + 'chosse correcte value:')
-print(text2art("|TP Python|"))
+print(text2art("|Project Python|"))
 def menu():
  x_=y_=k=k_=k__=0
  while (k !=1 and k!=2 and k!=3 and k!=4):
@@ -217,6 +217,16 @@ def menu():
        print(Fore.YELLOW + "def initImageRGB(imageRGB):\n imageRGB = []\n for x in range(0, 3):\n imageRGB.append([])\n for y in range(0,6):\n  imageRGB[x].append([]) \n  for z in range(0,3):\n   i=randrange(0,255)\n   imageRGB[x][y].append(i)\n return imageRGB")
       elif k__==2:
        print(initImageRGB("test.jpg"))
+      elif k__==3:
+       menu()
+    elif k_==4 :   
+     while(k__!=1 and k__!=2 and k__!=3):
+      printchoix()    
+      k__=int(input())
+      if k__==1  :
+       print(Fore.YELLOW + "def grayscale(imageRGB):\n GrayImg=[[0]*len(Img[0])\n for i in range(len(Img))]\n  for i in range(len(Img)):\n   for j in range(len(Img[0])):\nGrayImg[i][j]=(Img[i][j][2]+Img[i][j][0]+Img[i][j][1])//3")
+      elif k__==2:
+       grayscale("test.jpg")
       elif k__==3:
        menu()
 
