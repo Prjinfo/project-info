@@ -152,3 +152,10 @@ def  initImageRGB(imageRGB):
                          i=randrange(0,255)
                          imageRGB[x][y].append(i)
       return imageRGB
+######Q26
+def grayscale(Img):
+ GrayImg=[[0]*len(Img[0])]
+ for i in range(len(Img)):
+    for j in range(len(Img[0])):
+      GrayImg[i][j]=(Img[i][j][2]+Img[i][j][0]+Img[i][j][1])//3 
+ print(GrayImg)
