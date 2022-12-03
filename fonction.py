@@ -3,6 +3,7 @@ from array import array
 from PIL import Image
 import matplotlib.pyplot as plt
 import numpy as np
+from numpy import *
 import cv2 as cv
 #Q13
 
@@ -154,8 +155,13 @@ def  initImageRGB(imageRGB):
       return imageRGB
 ######Q26
 def grayscale(Img):
- GrayImg=[[0]*len(Img[0])]
- for i in range(len(Img)):
-    for j in range(len(Img[0])):
-      GrayImg[i][j]=(Img[i][j][2]+Img[i][j][0]+Img[i][j][1])//3 
- print(GrayImg)
+        GrayImg=[[0]*len(Img[0]) for i in range(len(Img))]#initialiser la matrice 2D en 0
+        for i in range(len(Img)):
+              for j in range(len(Img[0])):
+                    GrayImg[i][j]=(Img[i][j][2]+Img[i][j][0]+Img[i][j][1])//3 #implémenter la mztrice avec la moyenne de chaque pixel
+        arr = array(GrayImg, dtype=uint8)
+        new_image = Image.fromarray(arr) #convertir la matrice en image
+        plt.axis("off")
+        plt.imshow(new_image, cmap = "gray")
+        plt.show()
+                   
