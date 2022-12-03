@@ -1,3 +1,4 @@
+import imageio.v2 as imageio
 from fonction import *
 from art import text2art, tprint, art 
 from colorama import Fore
@@ -226,7 +227,8 @@ def menu():
       if k__==1  :
        print(Fore.YELLOW + "def grayscale(imageRGB):\n GrayImg=[[0]*len(Img[0])\n for i in range(len(Img))]\n  for i in range(len(Img)):\n   for j in range(len(Img[0])):\nGrayImg[i][j]=(Img[i][j][2]+Img[i][j][0]+Img[i][j][1])//3")
       elif k__==2:
-       grayscale("test.jpg")
+       Img = imageio.imread("test.jpg").tolist()
+       grayscale(Img)
       elif k__==3:
        menu()
 
