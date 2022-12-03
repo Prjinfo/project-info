@@ -4,3 +4,5 @@ Pillow
 matplotlib
 numpy
 array
+imageio
+art
