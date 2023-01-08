@@ -2,6 +2,9 @@ colorama
 Pillow
 matplotlib
 numpy
-array
+arrays
 imageio
 art
+cv
+opencv-python
+
