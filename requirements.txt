@@ -1,5 +1,4 @@
 colorama
-os
 Pillow
 matplotlib
 numpy
