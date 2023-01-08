@@ -5,6 +5,9 @@ import matplotlib.pyplot as plt
 import numpy as np
 from numpy import *
 import cv2 as cv
+from PIL import Image
+from PIL import ImageFilter
+
 #Q13
 
 def inverser(img):
@@ -22,32 +25,29 @@ def inverser(img):
 def image_noire(h,l):                                                                
  return  np.zeros((h,l))
 #Q5
-def image_blanch(h,l):                                                                
- return  np.ones((h,l))
+def white_image():
+ img = np.zeros([100,100,3],dtype=np.uint8)
+ img.fill(255) 
+ return img
 #Q6
-def creerImgBlancNoir(h,l):
-   base=np.zeros((h,l))
-   for i in range(h):
-    for j in range(l):
-     base[i, j]=(i+j)%2
+def creerImgBlancNoir():
+   base=white_image()
+   for i in range(len(base)):
+    for j in range(len(base[i])):
+     base[i,j]=(i+j)%2
    return base
 #Q7
-def negatif(nom_de_image,h,l):
- base=np.zeros((h,l))
- img=Image.open(nom_de_image)
- for i in range(h-1):
-    for j in range(l-1):
-     if img.getpixel((i,j))==0:
-      base[i,j]=1
-     else:   
-      base[i,j]=0
- return base
-
-def main():
-   Inputimg = cv.imread("test.jpg")
-   inverseimg = inverser(Inputimg)
-   imgplot = plt.imshow(inverseimg)
-   plt.show()
+def negative(): 
+ img = Image.open("index.jpg");
+ img.show()
+ for i in range(0, img.size[0]-1):
+    for j in range(0, img.size[1]-1):
+        pixelColorVals = img.getpixel((i,j));
+        redPixel    = 255 - pixelColorVals[0]; # Negate red pixel
+        greenPixel  = 255 - pixelColorVals[1]; # Negate green pixel
+        bluePixel   = 255 - pixelColorVals[2]; # Negate blue pixel
+        img.putpixel((i,j),(redPixel, greenPixel, bluePixel))
+ img.show()
 #############Q14
 def flipH():
    Inputimg = cv.imread("test.jpg")
@@ -62,20 +62,20 @@ def poserv(img1, img2):
     hoteur2 = img2.shape[0]
     largeur2 = img2.shape[1]
     channels2 = img2.shape[2]
-    N = 10 
-    Nhoteur = hoteur1 + hoteur1 + N
+    N = 2
+    Nhoteur = hoteur1 + hoteur2 + N
     if(largeur1 > largeur2):
         Nlargeur = largeur1
     else:
         Nlargeur = largeur2
     Nimage = np.zeros((Nhoteur,Nlargeur,channels1),np.uint8)
-    for x in( 0,hoteur1):
-        for y in (0,largeur1):
-            for c in (0,channels1):
+    for x in ( 0,hoteur1-1):
+        for y in (0,largeur1-1):
+            for c in (0,channels1-1):
                 Nimage[x,y,c]= img1[x,y,c]
-    for x in (0,hoteur2):
-        for y in (0,largeur2):
-            for c in (0,channels2):
+    for x in (0,hoteur2-1):
+        for y in (0,largeur2-1):
+            for c in (0,channels2-1):
                 Nimage[x,(hoteur1+N),c] = img2[x,y,c]
     return Nimage
 def main2():
@@ -164,4 +164,12 @@ def grayscale(Img):
         plt.axis("off")
         plt.imshow(new_image, cmap = "gray")
         plt.show()
-                   
+######Q27
+def Symetrie(Img):
+#*Renvoie une image symétrique de Img par un axe vertical
+     n=len(Img)  # nombre de lignes dans Ing
+     p = len(Img[0])  # nombre de colonnes dans Ing
+     Z =[[0 for j in range(p)] for i in range(n)]  # Z la matrice nulle
+     for i in range(n):
+            for j in range(p):
+                  Z[i][j]=Img[i][p-1-j]
