@@ -6,7 +6,7 @@ import numpy as np
 from numpy import *
 import cv2 as cv
 from PIL import ImageFilter
-
+import imageio.v2 as imageio
 #Q13
 
 def inverser(img):
@@ -156,3 +156,32 @@ def Symetrie(Img):
      for i in range(n):
             for j in range(p):
                   Z[i][j]=Img[i][p-1-j]
+     return Z
+def main3():
+ Img = imageio.imread("index.jpg").tolist()
+ plt.figure()
+ plt.imshow(Img)
+ plt.show()
+ k=Symetrie(Img)
+ plt.figure()
+ plt.imshow(k)
+ plt.show()
+def Symetrie2(Img):
+#*Renvoie une image symétrique de Img par un axe horizontale
+     n=len(Img)  # nombre de lignes dans Ing
+     p = len(Img[0])  # nombre de colonnes dans Ing
+     Z =[[0 for j in range(p)] for i in range(n)]  # Z la matrice nulle
+     for i in range(n):
+            for j in range(p):
+                  Z[i][j]=Img[n-1-i][j]
+     return Z
+def main4(): 
+ Img = imageio.imread("index.jpg").tolist()
+ plt.figure()
+ plt.imshow(Img)
+ plt.show()  
+ k=Symetrie(Img)
+ plt.figure()
+ plt.imshow(k)
+ plt.show()  
+              
