@@ -180,7 +180,7 @@ def main4():
  plt.figure()
  plt.imshow(Img)
  plt.show()  
- k=Symetrie(Img)
+ k=Symetrie2(Img)
  plt.figure()
  plt.imshow(k)
  plt.show()  
