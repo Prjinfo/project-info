@@ -2,7 +2,6 @@ import imageio.v2 as imageio
 from fonction import *
 from art import text2art, tprint, art 
 from colorama import Fore
-import os
 def printchoix():
  print(Fore.RED + '1)Print source code')
  print(Fore.RED + '2)Execute')
