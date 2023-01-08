@@ -32,7 +32,9 @@ def menu():
         printchoix()
         k__=int(input())
         if k__==1:
+          print(Fore.YELLOW +"--------------------------------------------------------------------")
           print(Fore.YELLOW +"import numpy as np\ndef image_noire(h,l):\n return  np.zeros((h,l))")
+          print(Fore.YELLOW +"--------------------------------------------------------------------")
           menu()
         elif k__==2 :
           x_=int(input("rentrer hauteur de photo"))
@@ -137,7 +139,7 @@ def menu():
         print(Fore.YELLOW +"--------------------------------------------------------------------")
         menu()
        elif k__==2:
-         main2()
+         poserV()
        elif k__==3:
          menu()
      if k_==4:
@@ -264,8 +266,12 @@ def menu():
       elif k__==3:
        menu()
     elif k_==4: 
-     while(k__!=1 and k__!=2 and k__!=3):
-      printchoix()    
+     while(k__!=1 and k__!=2 and k__!=3 and k__!=4):
+      print(Fore.RED + '1)Print source code')
+      print(Fore.RED + '2)Execute')
+      print(Fore.RED + '3)Execution {horizontal}')
+      print(Fore.RED + '4)menu')
+      print(Fore.GREEN + 'chosse correcte value:')
       k__=int(input())
       if k__==1  :
        print(Fore.YELLOW +"--------------------------------------------------------------------")
@@ -273,9 +279,10 @@ def menu():
        print(Fore.YELLOW +"--------------------------------------------------------------------")
        menu()
       elif k__==2:
-       nn=Symetrie("index.jpg")
-       AfficherImg(nn)
+       main3()
       elif k__==3:
+       main4()
+      elif k__==4:
        menu()
     elif k_==5 :   
      while(k__!=1 and k__!=2 and k__!=3):
@@ -295,4 +302,3 @@ def menu():
      menu()
 
 menu()
-       
