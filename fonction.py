@@ -5,7 +5,6 @@ import matplotlib.pyplot as plt
 import numpy as np
 from numpy import *
 import cv2 as cv
-from PIL import Image
 from PIL import ImageFilter
 
 #Q13
@@ -21,6 +20,11 @@ def inverser(img):
            for c in range(0,channels):
               newimg[x,y,c] = 255 - img[x,y,c]
    return newimg
+def main():
+    img1 = cv.imread("test.jpg")
+    Nimage  = inverser(img1)
+    imgplot = plt.imshow(Nimage)
+    plt.show()
 #Q4
 def image_noire(h,l):                                                                
  return  np.zeros((h,l))
@@ -55,41 +59,20 @@ def flipH():
    imgplot = plt.imshow(flipvertical)
    plt.show()
 ###Q15
-def poserv(img1, img2):
-    hoteur1 = img1.shape[0]
-    largeur1 = img1.shape[1]
-    channels1= img1.shape[2]
-    hoteur2 = img2.shape[0]
-    largeur2 = img2.shape[1]
-    channels2 = img2.shape[2]
-    N = 2
-    Nhoteur = hoteur1 + hoteur2 + N
-    if(largeur1 > largeur2):
-        Nlargeur = largeur1
-    else:
-        Nlargeur = largeur2
-    Nimage = np.zeros((Nhoteur,Nlargeur,channels1),np.uint8)
-    for x in ( 0,hoteur1-1):
-        for y in (0,largeur1-1):
-            for c in (0,channels1-1):
-                Nimage[x,y,c]= img1[x,y,c]
-    for x in (0,hoteur2-1):
-        for y in (0,largeur2-1):
-            for c in (0,channels2-1):
-                Nimage[x,(hoteur1+N),c] = img2[x,y,c]
-    return Nimage
-def main2():
-    img1 = cv.imread("test.jpg")
-    img2 = cv.imread("test.jpg")
-    Nimage  = poserv(img1,img2)
-    imgplot = plt.imshow(Nimage)
-    plt.show()
+def poserV():
+ img1=cv.imread("lion.jpeg")
+ img2=cv.imread("lolaa.jpeg")
+ imgV = Image(img1.shape[0] + img2.shape[0], img1.shape[1], img1.shape[2])
+ for i in range(img1.shape[0]):
+  for j in range(img1.shape[1]):
+   imgV.m[i, j] = img1.m[i, j]
+ for i in range(img2.shape[0]):
+  for j in range(img2.shape[1]):
+   imgV.m[img1.shape[1] + i, j] = img2.m[i, j]
+ imgplot = plt.imshow(imgV)
+ imgv.show()
 
-#print image fonction
-def AfficherImg(img):
- plt.axis("off")
- plt.imshow(img, interpolation="nearest")
- plt.show()
+
 ################ Sauvgarder une image sous forme jpg ou bmp
 def saveImage(img):
  plt.imsave("image1.png",img)
@@ -143,7 +126,7 @@ def ouvrirImage(nom_de_image):
     return img #retourne la matrice d'une image
 
 #####Q24:
-def  initImageRGB(imageRGB):
+def initImageRGB(imageRGB):
       imageRGB = []
       for x in range(0,3):
              imageRGB.append([])
