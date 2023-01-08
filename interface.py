@@ -175,6 +175,8 @@ def menu():
        print(Fore.YELLOW +"--------------------------------------------------------------------")
        menu()
       elif k__==2:
+       img = Image.open("test.jpg")
+       img.show()
        print(profondeur("test.jpg"))
       elif k__==3:
          menu()
@@ -188,6 +190,8 @@ def menu():
        print(Fore.YELLOW +"--------------------------------------------------------------------")
        menu()
       elif k__==2:
+       img = Image.open("test.jpg")
+       img.show()       
        print(luminance("test.jpg"))
       elif k__==3:
          menu()
@@ -201,6 +205,8 @@ def menu():
        print(Fore.YELLOW +"--------------------------------------------------------------------")
        menu()
       elif k__==2:
+       img = Image.open("test.jpg")
+       img.show()       
        print(constract("test.jpg"))
       elif k__==3:
          menu()
@@ -214,6 +220,8 @@ def menu():
        print(Fore.YELLOW +"--------------------------------------------------------------------")
        menu()
       elif k__==2:
+       img = Image.open("test.jpg")
+       img.show()
        print(ouvrirImage("test.jpg"))
       elif k__==3:
          menu()
